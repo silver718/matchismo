@@ -9,12 +9,14 @@
 #import "CardGameViewController.h"
 #import "Deck.h"
 #import "PlayingCardDeck.h"
+#import "CardMatchingGame.h"
 
 @interface CardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (nonatomic) int flipCount;
 
 @property (strong, nonatomic) Deck *deck;
+@property (strong, nonatomic) CardMatchingGame *game;
 
 @end
 
@@ -32,6 +34,7 @@
     // Dispose of any resources that can be recreated.
 }
 */
+
 
 - (Deck *)deck
 {

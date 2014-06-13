@@ -38,14 +38,42 @@
     return self;
 }
 
+static const int MISMATCH_PENALTY = 2;
+static const int MATCH_BONUS = 4;
+static const int COST_TO_CHOOSE = 1;
+
 - (void)chooseCardAtIndex:(NSUInteger)index
 {
+    Card *card = [self cardAtIndex:index];
     
+    if (!card.isMatched) {
+        if (card.chosen) {
+            card.chosen = NO;
+        } else {
+            // match against another card
+            for (Card *othercard in self.cards) {
+                if (othercard.isChosen && !othercard.isMatched) {
+                    int matchscore = [card match:@[othercard]];
+                    if (matchscore) {
+                        self.score += matchscore * MATCH_BONUS;
+                        card.matched = YES;
+                        othercard.matched = YES;
+                    } else {
+                        self.score -= MISMATCH_PENALTY;
+                        othercard.chosen = NO;
+                    }
+                    break; // can only choose 2 cards for now
+                }
+            }
+            self.score -= COST_TO_CHOOSE;
+            card.chosen = YES;
+        }
+    }
 }
 
 - (Card *)cardAtIndex:(NSUInteger)index
 {
-    
+    return (index < [self.cards count]) ? self.cards[index] : nil;
 }
 
 @end
