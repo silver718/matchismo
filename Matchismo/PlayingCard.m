@@ -35,7 +35,7 @@
     }
 }
 
-- (NSString*)suit
+- (NSString *)suit
 {
     // return _suit ? _suit : @"?";
     
