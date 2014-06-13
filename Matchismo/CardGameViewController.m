@@ -35,7 +35,7 @@
 
 - (Deck *)deck
 {
-    if (!_deck) _deck = [[PlayingCardDeck alloc] init]; // deck initilization
+    if (!_deck) _deck = [[PlayingCardDeck alloc] init]; // deck instantiation
     return _deck;
 }
 
