@@ -25,6 +25,7 @@
 		FDD90468194ADEAC0098380A /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD90462194ADEAC0098380A /* Deck.m */; };
 		FDD90469194ADEAC0098380A /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD90464194ADEAC0098380A /* PlayingCard.m */; };
 		FDD9046A194ADEAC0098380A /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD90466194ADEAC0098380A /* PlayingCardDeck.m */; };
+		FDD9046D194ADF180098380A /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD9046C194ADF180098380A /* CardMatchingGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		FDD90464194ADEAC0098380A /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCard.m; path = Model/PlayingCard.m; sourceTree = "<group>"; };
 		FDD90465194ADEAC0098380A /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCardDeck.h; path = Model/PlayingCardDeck.h; sourceTree = "<group>"; };
 		FDD90466194ADEAC0098380A /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = Model/PlayingCardDeck.m; sourceTree = "<group>"; };
+		FDD9046B194ADF180098380A /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
+		FDD9046C194ADF180098380A /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +127,7 @@
 		FD8CD578194851C800992566 /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
-				FD8CD5A7194873A700992566 /* Modal */,
+				FD8CD5A7194873A700992566 /* Model */,
 				FD8CD584194851C800992566 /* Main.storyboard */,
 				FD8CD587194851C800992566 /* CardGameViewController.h */,
 				FD8CD588194851C800992566 /* CardGameViewController.m */,
@@ -165,7 +168,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FD8CD5A7194873A700992566 /* Modal */ = {
+		FD8CD5A7194873A700992566 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				FDD9045F194ADEAC0098380A /* Card.h */,
@@ -176,8 +179,10 @@
 				FDD90464194ADEAC0098380A /* PlayingCard.m */,
 				FDD90465194ADEAC0098380A /* PlayingCardDeck.h */,
 				FDD90466194ADEAC0098380A /* PlayingCardDeck.m */,
+				FDD9046B194ADF180098380A /* CardMatchingGame.h */,
+				FDD9046C194ADF180098380A /* CardMatchingGame.m */,
 			);
-			name = Modal;
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +287,7 @@
 				FDD90468194ADEAC0098380A /* Deck.m in Sources */,
 				FD8CD583194851C800992566 /* CardGameAppDelegate.m in Sources */,
 				FD8CD589194851C800992566 /* CardGameViewController.m in Sources */,
+				FDD9046D194ADF180098380A /* CardMatchingGame.m in Sources */,
 				FDD9046A194ADEAC0098380A /* PlayingCardDeck.m in Sources */,
 				FD8CD57F194851C800992566 /* main.m in Sources */,
 				FDD90467194ADEAC0098380A /* Card.m in Sources */,
