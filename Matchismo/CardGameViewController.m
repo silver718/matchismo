@@ -22,6 +22,12 @@
 
 @implementation CardGameViewController
 
+- (IBAction)restart:(id)sender
+{
+    if (sender) self.game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
+    [self updateUI];
+}
+
 - (void)setScorecount:(int)scorecount
 {
     _scorecount = scorecount;
