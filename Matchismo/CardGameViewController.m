@@ -15,10 +15,19 @@
 
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (nonatomic) int scorecount;
 
 @end
 
 @implementation CardGameViewController
+
+- (void)setScorecount:(int)scorecount
+{
+    _scorecount = scorecount;
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.scorecount];
+    NSLog(@"Score changed to %d", self.scorecount);
+}
 
 - (CardMatchingGame *)game
 {
@@ -36,7 +45,6 @@
     long cardIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:cardIndex];
     [self updateUI];
-    
 }
 
 - (void)updateUI
@@ -49,6 +57,7 @@
         [cardButton setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
         cardButton.enabled = !card.isMatched;
     }
+    self.scorecount = self.game.score;
 }
 
 - (NSString *)titleForCard:(Card *)card
