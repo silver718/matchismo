@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (nonatomic) int scorecount;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *cardMatchNumber;
+
 @end
 
 @implementation CardGameViewController

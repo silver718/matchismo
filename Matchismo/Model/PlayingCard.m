@@ -18,7 +18,7 @@
         if (otherCard.rank == self.rank) {
             score = 4;
         }
-        if ([otherCard.suit isEqualToString:self.suit]) {
+        else if ([otherCard.suit isEqualToString:self.suit]) {
             score++;
         }
     }
