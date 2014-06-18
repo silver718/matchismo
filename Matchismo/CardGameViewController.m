@@ -30,6 +30,7 @@
 {
     if (sender) self.game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
     [self updateUI];
+    self.messageLabel.text = @"Choose two cards for matching!";
 }
 
 - (void)setScorecount:(int)scorecount
