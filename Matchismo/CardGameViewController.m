@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (nonatomic) int scorecount;
 
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *cardMatchNumber;
 
 @end
@@ -51,8 +53,25 @@
 - (IBAction)touchCardButton:(UIButton *)sender
 {
     long cardIndex = [self.cardButtons indexOfObject:sender];
+    Card *card_old = [self cardChosen];
+    Card *card_new = [self.game cardAtIndex:cardIndex];
     [self.game chooseCardAtIndex:cardIndex];
+    self.messageLabel.text = [self messageForMatching:card_new.isMatched card:card_new othercard:card_old];
     [self updateUI];
+}
+
+- (Card *)cardChosen
+{
+    Card *cardChosen;
+    for (UIButton *cardButton in self.cardButtons)
+    {
+        long  cardIndex = [self.cardButtons indexOfObject:cardButton];
+        Card *card = [self.game cardAtIndex:cardIndex];
+        if (!card.isMatched && card.isChosen) {
+            cardChosen = card;
+        }
+    }
+    return cardChosen;
 }
 
 - (void)updateUI
@@ -78,5 +97,12 @@
     return [UIImage imageNamed:card.isChosen ? @"cardfront" : @"cardback"];
 }
 
+- (NSString *)messageForMatching:(BOOL)isMatched card:(Card *)card othercard:(Card *)othercard
+{
+    if (!card.isChosen) return @"Choose two cards for matching!";
+    else if (othercard == nil) return [NSString stringWithFormat:@"%@ is chosen!", card.contents];
+    else
+    return isMatched ? [NSString stringWithFormat:@"%@ & %@ are matched!", card.contents, othercard.contents] : [NSString stringWithFormat:@"%@ & %@ are unmatched!", card.contents, othercard.contents];
+}
 
 @end

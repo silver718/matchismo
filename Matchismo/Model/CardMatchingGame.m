@@ -58,9 +58,11 @@ static const int COST_TO_CHOOSE = 1;
                         self.score += matchscore * MATCH_BONUS;
                         card.matched = YES;
                         othercard.matched = YES;
+                        NSLog(@"%@ & %@ are matched!", card.contents, othercard.contents);
                     } else {
                         self.score -= MISMATCH_PENALTY;
                         othercard.chosen = NO;
+                        NSLog(@"%@  & %@ are unmatched!", card.contents, othercard.contents);
                     }
                     break; // can only choose 2 cards for now
                 }
