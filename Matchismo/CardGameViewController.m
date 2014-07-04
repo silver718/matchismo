@@ -25,6 +25,8 @@
 @end
 
 @implementation CardGameViewController
+- (IBAction)Card2or3Segment:(UISegmentedControl *)sender {
+}
 
 - (IBAction)restart:(id)sender
 {
